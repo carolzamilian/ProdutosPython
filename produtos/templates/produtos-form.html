@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" 
+            content="width=device-width, user-scalable=no", initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Documento</title>
+</head>
+<body>
+    <br><br><br>
+    <h1>Criar e Editar produto<span class="badge badge-secondary"></span></h1>
+
+    <form method="POST" >
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Salvar</button>
+    </form>
+
+    {% if produto %}
+        <a href="{% url 'delete_produto' produto.id %}" > Deletar produto </a>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" 
+            content="width=device-width, user-scalable=no", initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Documento</title>
+</head>
+<body>
+    <ul>
+        <br><br><br>
+        {% for produto in produtos %}
+        <a href="{% url 'update_produto' produto.id %}">
+            <li> {{produto.descricao}} </li>
+            {% endfor %}
+        </a>
+    </ul>
+
+    <a href="{% url 'criar_produto' %}" > Novo produto </a>
+</body>
+</html>
